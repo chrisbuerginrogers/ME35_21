@@ -10,9 +10,18 @@ def serial_ports():
         ports = ['COM%s' % (i + 1) for i in range(256)]
     elif sys.platform.startswith('darwin'):
         ports = glob.glob('/dev/tty.*')
+        return ports
     else:
         raise EnvironmentError('Unsupported platform')
-    return ports
+    result = []
+    for port in ports:
+        try:
+            s = serial.Serial(port)
+            s.close()
+            result.append(port)
+        except (OSError, serial.SerialException):
+            pass
+    return result
 
 def InitSerial(port, bps = 9600, to = 0):
     global ser
