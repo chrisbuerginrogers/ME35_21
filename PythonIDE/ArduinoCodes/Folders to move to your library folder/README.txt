@@ -1,0 +1,1 @@
+Move these files to your /documents/Arduino/libraries/library folder and then try and compiling the backpack program.  

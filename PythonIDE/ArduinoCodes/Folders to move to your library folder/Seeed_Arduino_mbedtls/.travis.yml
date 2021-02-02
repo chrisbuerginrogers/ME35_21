@@ -1,0 +1,27 @@
+
+language: generic
+dist: bionic
+sudo: false
+cache:
+  directories:
+    - ~/arduino_ide
+    - ~/.arduino15/packages/
+
+before_install:
+   - wget -c https://github.com/Seeed-Studio/Seeed_Arduino_atUnified/raw/master/seeed-arduino-ci.sh
+
+script:
+   - chmod +x seeed-arduino-ci.sh
+   - cat $PWD/seeed-arduino-ci.sh
+   - $PWD/seeed-arduino-ci.sh -b "Seeeduino:samd:seeed_wio_terminal" -s 
+     nothing 
+     Seeed-Studio/esp-at-lib.git 
+     Seeed-Studio/Seeed_Arduino_FreeRTOS.git 
+     Seeed-Studio/Seeed_Arduino_atUnified.git 
+     Seeed-Studio/Seeed_Arduino_atWiFi.git 
+     Seeed-Studio/Seeed_Arduino_mbedtls.git
+
+notifications:
+  email:
+    on_success: change
+    on_failure: change
