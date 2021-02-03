@@ -13,7 +13,7 @@ utime.sleep(1)
 hub.port.A.motor.float()
 hub.port.A.motor.brake()
 hub.port.A.motor.run_at_speed(speed = 50, max_power = 100, acceleration = 100, deceleration = 100, stall = False)
-hub.port.A.motor.run_for_degrees(degrees = 90, speed = 50)
+hub.port.A.motor.run_for_degrees(90, 50)
 hub.port.A.motor.run_to_position(90, 50)  # position and speed
 hub.port.A.motor.default()
 hub.port.A.motor.run_for_time(100, 50)   # time - msec and speed

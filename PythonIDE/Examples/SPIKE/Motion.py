@@ -16,12 +16,7 @@ def beep():
      hub.sound.volume(10)
      hub.sound.beep(2000, 500, 3)
 
-hub.motion.callback(beep())
-
-hub.motion.gesture('down')  # is it currently active?
-
-hub.motion.was_gesture('down')  # has it been active since the last call?
-
+hub.motion.gesture()  # is it currently active?
 
 
 '''

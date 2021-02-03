@@ -29,9 +29,9 @@ utime.sleep(1)
 # all not working
 hub.Image.width()
 hub.Image.height()
-hub.Image.get_pixel(2,3)
+hub.Image.pixel(2,3)
 
-hub.Image.set_pixel(3,1,6)  # you cannot do this on built-in images
+hub.Image.pixel(3,1,6)  # you cannot do this on built-in images
 
 '''
 built-in images

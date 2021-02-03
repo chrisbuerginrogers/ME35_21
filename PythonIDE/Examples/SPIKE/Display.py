@@ -21,9 +21,9 @@ hub.display.show('LEGO ', loop=False, delay=500, clear = True, fade = 0, callbac
 
 # you can set individual ixels
 
-hub.display.set_pixel(2,3,9)  # x,y, brightness - 0-9
+hub.display.pixel(2,3,9)  # x,y, brightness - 0-9
 
-hub.display.get_pixel(2,3)
+hub.display.pixel(2,3)   # returns pixel value 
 
 hub.display.clear()
 
