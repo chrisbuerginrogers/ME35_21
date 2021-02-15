@@ -1,8 +1,8 @@
-for i in range(10):
-    print(1)
-    if 2>1:
-        print(2)
-    else:
-        if 2>3:
-            print(3)
-print(12)
+import hub
+
+while True:
+    if hub.button.left.is_pressed():
+        hub.display.show(hub.Image.YES)
+    elif hub.button.right.is_pressed():
+        hub.display.show(hub.Image.NO)
+        
