@@ -116,6 +116,13 @@
 				<Item Name="LVPointTypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVPointTypeDef.ctl"/>
 				<Item Name="Find Tag.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Find Tag.vi"/>
 				<Item Name="Search and Replace Pattern.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Search and Replace Pattern.vi"/>
+				<Item Name="List Directory and LLBs.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/List Directory and LLBs.vi"/>
+				<Item Name="Recursive File List.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Recursive File List.vi"/>
+				<Item Name="Close Zip File.vi" Type="VI" URL="/&lt;vilib&gt;/zip/Close Zip File.vi"/>
+				<Item Name="New Zip File.vi" Type="VI" URL="/&lt;vilib&gt;/zip/New Zip File.vi"/>
+				<Item Name="Compare Two Paths.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Compare Two Paths.vi"/>
+				<Item Name="Relative Path To Platform Independent String.vi" Type="VI" URL="/&lt;vilib&gt;/AdvancedString/Relative Path To Platform Independent String.vi"/>
+				<Item Name="Add File to Zip.vi" Type="VI" URL="/&lt;vilib&gt;/zip/Add File to Zip.vi"/>
 			</Item>
 			<Item Name="createSketch.vi" Type="VI" URL="../../../../../../Desktop/WIOCompiler-master/_subVI/createSketch.vi"/>
 			<Item Name="UploadArduino.vi" Type="VI" URL="../../../../../../Desktop/WIOCompiler-master/_subVI/UploadArduino.vi"/>
@@ -130,6 +137,10 @@
 			<Item Name="_ChannelSupport.lvlib" Type="Library" URL="/&lt;resource&gt;/ChannelSupport/_ChannelSupport/_ChannelSupport.lvlib"/>
 			<Item Name="ChannelProbePositionAndTitle.vi" Type="VI" URL="/&lt;resource&gt;/ChannelSupport/_ChannelSupport/ChannelProbePositionAndTitle.vi"/>
 			<Item Name="ChannelProbeWindowStagger.vi" Type="VI" URL="/&lt;resource&gt;/ChannelSupport/_ChannelSupport/ChannelProbeWindowStagger.vi"/>
+			<Item Name="CheckForEOL.vi" Type="VI" URL="../GitHub/Summer2020/LabVIEWCode/Subs/CheckForEOL.vi"/>
+			<Item Name="SSH_Read.vi" Type="VI" URL="../GitHub/Summer2020/LabVIEWCode/Subs/SSH/SSH_Read.vi"/>
+			<Item Name="SSH_ReadWrite.vi" Type="VI" URL="../GitHub/Summer2020/LabVIEWCode/Subs/SSH/SSH_ReadWrite.vi"/>
+			<Item Name="SSH_Write.vi" Type="VI" URL="../GitHub/Summer2020/LabVIEWCode/Subs/SSH/SSH_Write.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>
