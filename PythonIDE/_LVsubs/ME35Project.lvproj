@@ -123,6 +123,8 @@
 				<Item Name="Compare Two Paths.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Compare Two Paths.vi"/>
 				<Item Name="Relative Path To Platform Independent String.vi" Type="VI" URL="/&lt;vilib&gt;/AdvancedString/Relative Path To Platform Independent String.vi"/>
 				<Item Name="Add File to Zip.vi" Type="VI" URL="/&lt;vilib&gt;/zip/Add File to Zip.vi"/>
+				<Item Name="NI_AALPro.lvlib" Type="Library" URL="/&lt;vilib&gt;/Analysis/NI_AALPro.lvlib"/>
+				<Item Name="NI_AALBase.lvlib" Type="Library" URL="/&lt;vilib&gt;/Analysis/NI_AALBase.lvlib"/>
 			</Item>
 			<Item Name="createSketch.vi" Type="VI" URL="../../../../../../Desktop/WIOCompiler-master/_subVI/createSketch.vi"/>
 			<Item Name="UploadArduino.vi" Type="VI" URL="../../../../../../Desktop/WIOCompiler-master/_subVI/UploadArduino.vi"/>
@@ -141,6 +143,7 @@
 			<Item Name="SSH_Read.vi" Type="VI" URL="../GitHub/Summer2020/LabVIEWCode/Subs/SSH/SSH_Read.vi"/>
 			<Item Name="SSH_ReadWrite.vi" Type="VI" URL="../GitHub/Summer2020/LabVIEWCode/Subs/SSH/SSH_ReadWrite.vi"/>
 			<Item Name="SSH_Write.vi" Type="VI" URL="../GitHub/Summer2020/LabVIEWCode/Subs/SSH/SSH_Write.vi"/>
+			<Item Name="lvanlys.framework" Type="Document" URL="/&lt;resource&gt;/lvanlys.framework"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>

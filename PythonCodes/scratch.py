@@ -1,5 +1,11 @@
-import utime
+import hub, utime
 
-for i in range(10):
-    print(i)
-    utime.sleep(1)
+sonic = hub.port.C.device
+
+start=utime.ticks_ms()
+for i in range(1000):
+    fred = sonic.get()
+(utime.ticks_ms() - start) /1000
+
+
+ p = hub.port.A.motor.pair(hub.port.B.motor)
