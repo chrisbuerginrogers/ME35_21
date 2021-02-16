@@ -14,7 +14,6 @@ There are a few useful things in this code:
 
 FAQ:
   1. Where do I get LabVIEW? It is free here - https://www.ni.com/en-us/support/downloads/software-products/download.labview-community.html#370001
-  2. I am on Big Sur and LabVIEW is not working
-      - open the Terminal and copy paste each of these commands (and hit return each time) - you only have to do this once - but that will let LabVIEW work on your machine
-       <br><em>defaults write com.ni.labview NSGraphicsContextAllowOverRestore -bool YES</em>
-       <br><em>defaults write com.ni.labview NSViewAllowsRootLayerBacking 0</em>
+  2. I am on Big Sur and LabVIEW is not working - open the Terminal and copy paste each of these commands (and hit return each time) - you only have to do this once - but that will let LabVIEW work on your machine
+       <br>- <em>defaults write com.ni.labview NSGraphicsContextAllowOverRestore -bool YES</em>
+       <br>- <em>defaults write com.ni.labview NSViewAllowsRootLayerBacking 0</em>
