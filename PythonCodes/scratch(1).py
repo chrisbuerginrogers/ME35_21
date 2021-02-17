@@ -1,7 +1,9 @@
 import hub, utime
 
-sonic = hub.port.C.device
+dial = hub.port.A.motor
+dial.mode(2)
 
-
-for i in range(100):
+while True:
+    dial.get()[0]
+    utime.sleep(0.1)
     
