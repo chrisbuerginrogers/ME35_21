@@ -199,15 +199,16 @@
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
 			<Item Name="AssignColors.vi" Type="VI" URL="../ColorText/AssignColors.vi"/>
-			<Item Name="Tag-i32.lvlib" Type="Library" URL="/&lt;extravilib&gt;/ChannelInstances/Tag-i32.lvlib"/>
-			<Item Name="_ChannelSupport.lvlib" Type="Library" URL="/&lt;resource&gt;/ChannelSupport/_ChannelSupport/_ChannelSupport.lvlib"/>
-			<Item Name="ChannelProbePositionAndTitle.vi" Type="VI" URL="/&lt;resource&gt;/ChannelSupport/_ChannelSupport/ChannelProbePositionAndTitle.vi"/>
-			<Item Name="ChannelProbeWindowStagger.vi" Type="VI" URL="/&lt;resource&gt;/ChannelSupport/_ChannelSupport/ChannelProbeWindowStagger.vi"/>
 			<Item Name="CheckForEOL.vi" Type="VI" URL="../GitHub/Summer2020/LabVIEWCode/Subs/CheckForEOL.vi"/>
 			<Item Name="SSH_Read.vi" Type="VI" URL="../GitHub/Summer2020/LabVIEWCode/Subs/SSH/SSH_Read.vi"/>
 			<Item Name="SSH_ReadWrite.vi" Type="VI" URL="../GitHub/Summer2020/LabVIEWCode/Subs/SSH/SSH_ReadWrite.vi"/>
 			<Item Name="SSH_Write.vi" Type="VI" URL="../GitHub/Summer2020/LabVIEWCode/Subs/SSH/SSH_Write.vi"/>
 			<Item Name="lvanlys.framework" Type="Document" URL="/&lt;resource&gt;/lvanlys.framework"/>
+			<Item Name="Read With Abort.vi" Type="VI" URL="/&lt;extravilib&gt;/ChannelInstances/Tag-i32/Read With Abort.vi"/>
+			<Item Name="Write With Abort.vi" Type="VI" URL="/&lt;extravilib&gt;/ChannelInstances/Tag-i32/Write With Abort.vi"/>
+			<Item Name="Instantiate.vi" Type="VI" URL="/&lt;extravilib&gt;/ChannelInstances/Tag-i32/Instantiate.vi"/>
+			<Item Name="EndpointRead.vi" Type="VI" URL="/&lt;extravilib&gt;/ChannelInstances/Tag-i32/EndpointRead.vi"/>
+			<Item Name="Endpoint.vi" Type="VI" URL="/&lt;extravilib&gt;/ChannelInstances/Tag-i32/Endpoint.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>
