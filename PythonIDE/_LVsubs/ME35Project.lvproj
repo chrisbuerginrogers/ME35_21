@@ -211,9 +211,6 @@
 			</Item>
 			<Item Name="AssignColors.vi" Type="VI" URL="../ColorText/AssignColors.vi"/>
 			<Item Name="CheckForEOL.vi" Type="VI" URL="../GitHub/Summer2020/LabVIEWCode/Subs/CheckForEOL.vi"/>
-			<Item Name="SSH_Read.vi" Type="VI" URL="../GitHub/Summer2020/LabVIEWCode/Subs/SSH/SSH_Read.vi"/>
-			<Item Name="SSH_ReadWrite.vi" Type="VI" URL="../GitHub/Summer2020/LabVIEWCode/Subs/SSH/SSH_ReadWrite.vi"/>
-			<Item Name="SSH_Write.vi" Type="VI" URL="../GitHub/Summer2020/LabVIEWCode/Subs/SSH/SSH_Write.vi"/>
 			<Item Name="Read With Abort.vi" Type="VI" URL="/&lt;extravilib&gt;/ChannelInstances/Tag-i32/Read With Abort.vi"/>
 			<Item Name="Write With Abort.vi" Type="VI" URL="/&lt;extravilib&gt;/ChannelInstances/Tag-i32/Write With Abort.vi"/>
 			<Item Name="Instantiate.vi" Type="VI" URL="/&lt;extravilib&gt;/ChannelInstances/Tag-i32/Instantiate.vi"/>
