@@ -85,6 +85,9 @@ def scp_put_all(source, dest):
      except Exception as e:
           return str(e)
 
-InitSSH('192.168.86.128','pi','BuddhaLives')
-ReadSSH()
+InitSSH('192.168.86.136','pi','BuddhaLives')
+for i in range(10):
+    ReadSSH()
+    WriteSSH('\n\n')
+    time.sleep(1)
 CloseSSH()
