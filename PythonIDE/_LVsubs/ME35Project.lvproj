@@ -235,6 +235,7 @@
 			<Item Name="Carbon.framework" Type="Document" URL="Carbon.framework">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
+			<Item Name="Demo.vi" Type="VI" URL="../../Demo.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>
