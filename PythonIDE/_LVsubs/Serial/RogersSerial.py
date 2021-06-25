@@ -35,7 +35,14 @@ def CloseSerial():
 
 def WriteSerial(string):
     global ser
-    return(ser.write(string.encode()))    # write a string
+    return (ser.write(string.encode()))    # write a string
+
+def WriteBytes(data,replyLength):
+    size = ser.in_waiting
+    buffer = ser.read(size)
+    reply = ser.write(bytes(data))
+    if (replyLength < 0): return []
+    return list(ser.read(replyLength))    # write bytes and get reply
 
 def ScriptSerial(string):
     global ser
@@ -53,3 +60,5 @@ def ReadSerial():
     if ser.in_waiting:
         reply = ser.readline().decode()
     return(reply)
+
+# note if the timeout is anything but zero it is slow
