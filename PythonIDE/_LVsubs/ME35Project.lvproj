@@ -40,7 +40,6 @@
 		<Item Name="junk.vi" Type="VI" URL="../../../../../Desktop/junk.vi"/>
 		<Item Name="Interrogate.vi" Type="VI" URL="../../../../../Desktop/Hacking/Interrogate.vi"/>
 		<Item Name="BuildSPIKETree.vi" Type="VI" URL="../../../../../Desktop/Hacking/BuildSPIKETree.vi"/>
-		<Item Name="ParseReply.vi" Type="VI" URL="../../../../../Desktop/Hacking/ParseReply.vi"/>
 		<Item Name="CleanupReply.vi" Type="VI" URL="../../../../../Desktop/Hacking/CleanupReply.vi"/>
 		<Item Name="UploadCode.vi" Type="VI" URL="../../../../../Desktop/Hacking/UploadCode.vi"/>
 		<Item Name="OMVTest.vi" Type="VI" URL="../../../../../Desktop/OMVTest.vi"/>
