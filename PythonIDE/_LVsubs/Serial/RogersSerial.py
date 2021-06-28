@@ -26,26 +26,30 @@ def serial_ports():
 def InitSerial(port, bps = 9600, to = 0):
     global ser
     ser = serial.Serial(port, bps, timeout = to)  # open serial port
-    return (ser.name)
+    ser.flushInput()
+    ser.flushOutput()
+    return ser.name
+
+def FlushSerial():
+    ser.flushInput()
+    ser.flushOutput()
+    return(ser.in_waiting)
 
 def CloseSerial():
-    global ser
+    ser.flush()
     ser.close()
     return('done')
 
 def WriteSerial(string):
-    global ser
     return (ser.write(string.encode()))    # write a string
 
 def WriteBytes(data,replyLength):
-    size = ser.in_waiting
-    buffer = ser.read(size)
+    buffer=ser.read(ser.in_waiting)
     reply = ser.write(bytes(data))
     if (replyLength < 0): return []
     return list(ser.read(replyLength))    # write bytes and get reply
 
 def ScriptSerial(string):
-    global ser
     reply = ''
     lines = string.split('\n')
     for line in lines:
@@ -55,7 +59,6 @@ def ScriptSerial(string):
     return reply 
 
 def ReadSerial():
-    global ser
     reply = ''
     if ser.in_waiting:
         reply = ser.readline().decode()
