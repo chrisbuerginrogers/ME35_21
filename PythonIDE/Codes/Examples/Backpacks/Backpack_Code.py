@@ -88,8 +88,9 @@ class Backpack():
         self.ask('import os')
         files = self.ask('os.listdir()')
         if filename in files: self.ask('os.remove("%s")'%filename)
-        payload = "f = open('%s','wb')\r\n"% (filename)
+        payload = "f = open('%s','w')\r\n"% (filename)
         payload += "f.write(\'%s\')\r\n" %(self.clean(text, True).encode())
+        payload += "f.write(b'" + new_str + "')\r\n"
         payload += 'f.close()\r\n'
         print(self.CtrlE_script(payload))
                 
@@ -101,17 +102,4 @@ class Backpack():
         payload += 'f.close()\r\n'
         print('upld: ' + self.upload(payload))
         self.ask('print(text.decode())')
-                
-dongle = Backpack(hub.port.F, verbose = True) #connect to ESP - test to make sure it is working, load needed functions
-success = dongle.setup()
-dongle.ask('\x03')
 
-fred = '''
-import os
-
-os.listdir()
-for i in range(10):
-    print('test: ' + str(i))
-'''
-dongle.load('test.py',fred)
-dongle.get('test.py')
