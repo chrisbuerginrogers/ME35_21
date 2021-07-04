@@ -1,20 +1,21 @@
 import hub, utime, ujson
 
 class Backpack():
-    def __init__(self, SPIKE_port, verbose = True ):
+    def __init__(self, SPIKE_port, verbose = True):
         self.ser = SPIKE_port
         self.ser.mode(hub.port.MODE_FULL_DUPLEX)
         utime.sleep(0.1)
         self.ser.baud(115200)
-        self.verbose = verbose
+        self.verbose = verbose        
         
     def setup(self):
-        self.ser.write('\r\n')
         reply = self.read()
-        connected = '>>>' in reply
-        if not connected: 
-            print('no dongle connected')
-        return connected
+        for i in range(3): # try 3 times
+            self.ser.write('\x03\r\n')
+            utime.sleep(0.1)
+            reply += self.read()
+            if '>>>' in reply: break
+        return '>>>' in reply
 
     def read(self):  
         #reads the UART buffer until empty
@@ -30,33 +31,31 @@ class Backpack():
                     response += 'ERR: ' + str(reply)
         return response
         
-    def read_wait(self, to=5000):
+    def EOL(self, response):
+        E = '===' in response
+        P = '>>>' in response
+        I = '...' in response
+        return (E or P or I)
+
+    def read_wait(self, t0=5000):
         response = ''
         start = utime.ticks_ms()
-        while (utime.ticks_ms()-start < to):
+        while (utime.ticks_ms()-start < t0):
             response += self.read()
-            if ('>>>' in response):
+            if self.EOL(response):
                 return response
             utime.sleep(0.01)
         return response
         
-    def upload(self, text, n=20): 
-        #uploads string to the ESP in chunks
+    def upload(self, text, n=20, t0=5000): 
+        #uploads string in chunks
         reply = ''
         lines = [text[i:i+n] for i in range(0, len(text), n)]
-        for line in lines: #need to go in chunks
+        for line in lines: 
             self.ser.write(line)
             reply += self.read()
-        if not ('>>>' in reply):
-            reply += self.read_wait()
-        return reply
-
-    def CtrlE_script(self, text):
-        self.ser.write('\x05')
-        reply = self.read()
-        reply += self.upload(text)
-        self.ser.write('\x04')
-        reply += self.read_wait()
+        if not self.EOL(reply): 
+            reply += self.read_wait(t0)
         return reply
     
     def show(self, text, eol= '\r\n'): 
@@ -67,6 +66,15 @@ class Backpack():
             print(line)
         print('^^^^^^^^^^^^^^^^^^^')
         
+    def clean(self, text):
+        # cleans text to send out
+        text = text.replace("'","\'")
+        text = text.replace('"','\"')
+        text = text.replace("\r\n", "\\r\\n")
+        text = text.replace("\r", "\\r")
+        text = text.replace('\n','\\n')
+        return text
+
     def ask(self, text=''): 
         text = text.split('\r\n')[0]   #assume single line
         #if self.verbose: print('asked: %s' % self.clean(text))
@@ -74,32 +82,35 @@ class Backpack():
         if self.verbose: self.show(response,'\r\n')
         return response
         
-    def clean(self, text, File = False):
-        # cleans text to send out
-        text = text.replace("'","\'")
-        text = text.replace('"','\"')
-        text = text.replace("\r\n", "\\r\\n")
-        text = text.replace("\r", "\\r")
-        text = text.replace('\n','\n') if File else text.replace('\n','\r\n')
-        # note that you have a issue if you are trying to send '\n' as a search character etc
-        return text
-        
     def load(self,filename,text):
         self.ask('import os')
         files = self.ask('os.listdir()')
-        if filename in files: self.ask('os.remove("%s")'%filename)
-        payload = "f = open('%s','w')\r\n"% (filename)
-        payload += "f.write(\'%s\')\r\n" %(self.clean(text, True).encode())
-        payload += "f.write(b'" + new_str + "')\r\n"
-        payload += 'f.close()\r\n'
-        print(self.CtrlE_script(payload))
-                
-    def get(self,filename):
-        payload = 'import os\r\n'
-        payload += "f = open('%s','rb')\r\n"% (filename)
-        payload += 'text = f.read()\r\n'
-        payload += 'text = text[2:-1]\r\n'
-        payload += 'f.close()\r\n'
-        print('upld: ' + self.upload(payload))
-        self.ask('print(text.decode())')
+        if filename in files: 
+            self.ask('os.remove("%s")'%filename)
+        self.ask('\x05')
+        self.ask('text = ""')
+        redo = True
+        while redo:
+            redo = False
+            for cmd in text.split('\n'):
+                cmd = "text += \'" + cmd + "\\n\'"
+                reply = self.ask(cmd)
+                if 'ERR: ' in reply:
+                    print('REDO')
+                    redo = True
+        self.ask('\x04')
+        self.ask('f = open("%s","w")'%filename)
+        self.ask('f.write(text)')
+        self.ask('f.close()')
 
+    def get(self,filename):
+        self.ask('import os')
+        self.ask("f = open('%s','r')" % filename)
+        text = self.ask('f.read()')
+        self.ask('f.close()')
+        try:
+            reply = text.split('\r\n')[1]
+            reply = reply.replace('\\n','\n')[1:-2]
+            return reply
+        except:
+            return text
