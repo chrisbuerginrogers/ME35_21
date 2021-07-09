@@ -50,11 +50,13 @@ def writeIt(thing, property, value):
 \x04
 '''
 
-commands = commands.replace('SSID',p.SSID)
-commands = commands.replace('PASS',p.KEY)
+commands = commands.replace('SSID',)
+commands = commands.replace('PASS',)
 commands = commands.replace('KEY',p.appKeys['Thingworx'])
 
-dongle = Backpack(hub.port.F, verbose = False) 
+dongle = Backpack(hub.port.F, verbose = True) 
+dongle.ask('import ESPClient, ujson')
+dongle.ask("ESPClient.wifi('%s','%s')"%(p.SSID,p.KEY)
 
 def configure():
     if not dongle.setup(): return False
