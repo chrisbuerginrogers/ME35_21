@@ -8,8 +8,6 @@ Property = 'Fred'
 
 commands = '''
 \x05
-import ESPClient, ujson
-ESPClient.wifi('SSID','PASS')
 PORT = 443
 base='pp-21060114127e.portal.ptc.io'
 request='%s /Thingworx/Things/%s/Properties/%s HTTP/1.1\\r\\n'
@@ -50,13 +48,12 @@ def writeIt(thing, property, value):
 \x04
 '''
 
-commands = commands.replace('SSID',)
-commands = commands.replace('PASS',)
 commands = commands.replace('KEY',p.appKeys['Thingworx'])
 
 dongle = Backpack(hub.port.F, verbose = True) 
 dongle.ask('import ESPClient, ujson')
-dongle.ask("ESPClient.wifi('%s','%s')"%(p.SSID,p.KEY)
+dongle.ask("ESPClient.wifi('%s','%s')"%(p.SSID,p.KEY))
+dongle.ask()  # check for IP address (slow sometimes)
 
 def configure():
     if not dongle.setup(): return False

@@ -5,6 +5,7 @@ def wifi(SSID,KEY):
     wlan.active(True)
     wlan.connect(SSID, KEY)
     mac = ubinascii.hexlify(network.WLAN().config('mac'),':').decode()
+    print("MAC " + mac)
     while '0.0.0.0' in wlan.ifconfig():
         utime.sleep(1)
     return wlan.ifconfig()

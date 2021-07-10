@@ -31,7 +31,6 @@
 			<Property Name="NI.DISK" Type="Bool">true</Property>
 		</Item>
 		<Item Name="ME35.vi" Type="VI" URL="../../ME35.vi"/>
-		<Item Name="PyVIEW_menu.rtm" Type="Document" URL="../PyVIEW_menu.rtm"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Check if File or Folder Exists.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Check if File or Folder Exists.vi"/>
