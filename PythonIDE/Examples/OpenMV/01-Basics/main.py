@@ -24,7 +24,7 @@ led = pyb.LED(2) # Switch to using the green LED.
 
 while(usb.isconnected()):
     led.on()
-        time.sleep_ms(150)
+    time.sleep_ms(150)
     led.off()
     time.sleep_ms(100)
     led.on()
