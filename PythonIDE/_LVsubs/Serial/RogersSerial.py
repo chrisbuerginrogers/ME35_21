@@ -25,43 +25,37 @@ def serial_ports():
 
 def InitSerial(port, bps = 9600, to = 0):
     global ser
-    ser = serial.Serial(port, bps, timeout = to)  # open serial port
-    ser.flushInput()
-    ser.flushOutput()
-    return ser.name
-
-def FlushSerial():
-    ser.flushInput()
-    ser.flushOutput()
-    return(ser.in_waiting)
+    try:
+        ser = serial.Serial(port, bps, timeout = to)  # open serial port
+        ser.flushInput()
+        ser.flushOutput()
+        return ser.name
+    except Exception as e:
+        return 'ERR: ' + str(e)
 
 def CloseSerial():
-    ser.flush()
-    ser.close()
     return('done')
+    try:
+        ser.flush()
+        ser.close()
+        return 'done'
+    except Exception as e:
+        return 'ERR: ' + str(e)    
 
 def WriteSerial(string):
-    return (ser.write(string.encode()))    # write a string
-
-def WriteBytes(data,replyLength):
-    buffer=ser.read(ser.in_waiting)
-    reply = ser.write(bytes(data))
-    if (replyLength < 0): return []
-    return list(ser.read(replyLength))    # write bytes and get reply
-
-def ScriptSerial(string):
-    reply = ''
-    lines = string.split('\n')
-    for line in lines:
-        ser.write(line.encode())
-        time.sleep(1)
-        reply += ReadSerial() + '\n'
-    return reply 
+    try:
+        reply = ser.write(string.encode())
+        return str(reply)
+    except Exception as e:
+        return 'ERR: ' + str(e)    
 
 def ReadSerial():
-    reply = ''
-    if ser.in_waiting:
-        reply = ser.readline().decode()
-    return(reply)
+    try:
+        reply = ''
+        if ser.in_waiting:
+            reply = ser.readline().decode()
+        return reply
+    except Exception as e:
+        return 'ERR: ' +  str(e)
 
 # note if the timeout is anything but zero it is slow

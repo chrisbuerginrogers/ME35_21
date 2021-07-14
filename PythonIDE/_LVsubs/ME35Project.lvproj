@@ -31,6 +31,7 @@
 		</Item>
 		<Item Name="ME35.vi" Type="VI" URL="../../ME35.vi"/>
 		<Item Name="messing with tree dragging.vi" Type="VI" URL="../../../../../Desktop/messing with tree dragging.vi"/>
+		<Item Name="index.vi" Type="VI" URL="../../Docs/index.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Check if File or Folder Exists.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Check if File or Folder Exists.vi"/>
