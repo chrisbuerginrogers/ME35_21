@@ -47,7 +47,7 @@ class Backpack():
             utime.sleep(0.01)
         return response
         
-    def upload(self, text, n=20, t0=5000): 
+    def upload(self, text, n=15, t0=5000): 
         #uploads string in chunks
         reply = ''
         lines = [text[i:i+n] for i in range(0, len(text), n)]
