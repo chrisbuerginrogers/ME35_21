@@ -1,7 +1,7 @@
 import hub, utime
 from Backpack_Code import Backpack
 
-dongle = Backpack(hub.port.F, verbose = True) 
+dongle = Backpack(hub.port.A, verbose = True) 
 dongle.ask('\x03')
 
 commands = '''
