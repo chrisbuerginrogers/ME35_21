@@ -13,13 +13,13 @@ speed = 10.0
 @event(robot.when_bumped, [True, False])
 async def when_bumper(robot):
     print('LEFT')
-    # await robot.turn_left(90)
+    await robot.turn_left(90)
 
 
 @event(robot.when_bumped, [False, True])
 async def when_bumper(robot):
     print('RIGHT')
-    # await robot.turn_right(90)
+    await robot.turn_right(90)
 
 @event(robot.when_bumped, [])
 async def when_bumped(robot):
