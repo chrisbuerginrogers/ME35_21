@@ -11,7 +11,7 @@ again to stop.
 import hub, utime, port
 import color_sensor, display, sound, motor, button
 
-ledBright = 7
+ledBright = 100
 motorSpeed = 5000
 
 class SmartPlot():
@@ -50,7 +50,7 @@ class SmartPlot():
         Y = round(x /100 * 4)
         X = round((y + 180) / 360 * 4)
         X = 5-X if X < 0 else X
-        self.pixel(X,Y,90)
+        self.pixel(X,Y, int(0.9*ledBright))
 
     def Train(self):
 #        self.led(3)
@@ -112,3 +112,6 @@ SP.clearscreen()
 motor.motor_stop(SP.motorPort)
 
 # hub.power_off()
+
+motor.motor_move_to_position(motorPort, motorSpeed, pos, motor.MOTOR_END_STATE_HOLD)
+

@@ -17,7 +17,7 @@ duration = 1000
 motor.motor_move_for_time(p1, duration, speed,motor.MOTOR_END_STATE_BRAKE)
 degrees = 360
 motor.motor_move_by_degrees(p1, speed, degrees, motor.MOTOR_END_STATE_HOLD)
-motor.motor_move_to_position(p1, speed, degrees,motor.MOTOR_END_STATE_FLOAT)
+motor.motor_move_to_position(p1, speed, degrees,motor.MOTOR_END_STATE_SMART_COAST)
 motor.motor_move_to_absolute_position(p1, speed, degrees,
             motor.MOTOR_MOVE_DIRECTION_CCW,
             motor.MOTOR_END_STATE_HOLD)
