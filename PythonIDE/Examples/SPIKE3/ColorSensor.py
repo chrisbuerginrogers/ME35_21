@@ -1,7 +1,7 @@
 import color_sensor
 import port
 
-light = port.PORTC
+light = port.PORTA
 
 # Get color - see Defines.py for the list of colors
 colors = {
