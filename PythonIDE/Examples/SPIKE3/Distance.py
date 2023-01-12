@@ -1,7 +1,7 @@
 import distance_sensor as ds
 import port,time
 
-p1 = port.PORTB
+p1 = port.PORTD
 
 # Get distance from object of distance sensor connected to port A
 for i in range(100):
