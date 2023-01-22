@@ -163,7 +163,7 @@ class Servo(NanoMotorBoard):
         self.instance = instance
         
     def setAngle(self, angle):
-        angle =  int(angle)#int(7 + (angle/180 * (28 - 7)))
+        angle =  int(7 + (angle/180 * (28 - 7)))
         return self.setData(SET_PWM_DUTY_CYCLE_SERVO, self.instance, angle)
     
     def detach(self):
