@@ -1,6 +1,6 @@
 # ME35_21
 This has the LabVIEW (and example) code for Robotics class in 2021.
-To use this you will need to install Python3 on your machine and a few libraries
+To use this you will need to install Python3 of the same bitness as the LabVIEW install on your machine and a few libraries
   1. pip3 install pyserial
   
 There are a few useful things in this code:
@@ -13,7 +13,7 @@ There are a few useful things in this code:
   7. Save console log files for post-processsing
 
 FAQ:
-  1. Where do I get LabVIEW? It is free here - https://www.ni.com/en-us/support/downloads/software-products/download.labview-community.html#370001
+  1. Where do I get LabVIEW? It is free here - https://www.ni.com/en-us/support/downloads/software-products/download.labview-community.html#370001 (make sure to select the latest verison and the right operating system).  You will also need to install NIVISA here - https://www.ni.com/da-dk/support/downloads/drivers/download.ni-visa.html#460225
   2. I am on Big Sur and LabVIEW is not working - open the Terminal and copy paste each of these commands (and hit return each time) - you only have to do this once - but that will let LabVIEW work on your machine
        <br>- <em>defaults write com.ni.labview NSGraphicsContextAllowOverRestore -bool YES</em>
        <br>- <em>defaults write com.ni.labview NSViewAllowsRootLayerBacking 0</em>
