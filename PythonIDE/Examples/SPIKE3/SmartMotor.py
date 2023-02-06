@@ -23,9 +23,9 @@ class SmartPlot():
 #        self.led = hub.led
         self.clearscreen = display.display_clear
         self.pixel = display.display_set_pixel
-        self.save = lambda : button.button_isPressed(button.BUTTON_RIGHT)[0]
-        self.done = lambda : button.button_isPressed(button.BUTTON_ON_OFF)[0]
-        self.quit = lambda : button.button_isPressed(button.BUTTON_LEFT)[0]
+        self.save = lambda : button.button_pressed(button.BUTTON_RIGHT)
+        self.done = lambda : button.button_pressed(button.BUTTON_ON_OFF)
+        self.quit = lambda : button.button_pressed(button.BUTTON_LEFT)
         self.training = []
 
     def Setup(self):
@@ -54,6 +54,8 @@ class SmartPlot():
 
     def Train(self):
 #        self.led(3)
+        motor.motor_move_to_position(self.motorPort, 0, motorSpeed, motor.MOTOR_END_STATE_COAST)
+        utime.sleep(.1)
         self.Map()   
         while not self.done():
             while not self.save() and not self.done(): 
@@ -91,7 +93,7 @@ class SmartPlot():
                     min = dist
                     pos = a
             self.Map(bright,pos)
-            motor.motor_move_to_position(self.motorPort, motorSpeed, pos, motor.MOTOR_END_STATE_HOLD)
+            motor.motor_move_to_position(self.motorPort, pos, motorSpeed, motor.MOTOR_END_STATE_HOLD)
             utime.sleep(.1)
             #print('(%d,%d)'%(pos,bright)) 
         while self.done(): 
@@ -100,7 +102,7 @@ class SmartPlot():
 #        self.led(0)
         self.clearscreen()
 
-SP = SmartPlot(port.PORTF,port.PORTC)
+SP = SmartPlot(port.PORTE,port.PORTC)
 
 SP.Setup()
 while not SP.quit():
@@ -112,6 +114,3 @@ SP.clearscreen()
 motor.motor_stop(SP.motorPort)
 
 # hub.power_off()
-
-motor.motor_move_to_position(motorPort, motorSpeed, pos, motor.MOTOR_END_STATE_HOLD)
-

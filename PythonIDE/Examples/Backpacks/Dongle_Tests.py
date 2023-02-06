@@ -2,7 +2,7 @@ import hub
 import utime, os, ujson
 from Backpack_Code import Backpack
               
-dongle = Backpack(hub.port.F, verbose = True) #connect to ESP - test to make sure it is working, load needed functions
+dongle = Backpack(hub.port.A, verbose = True) #connect to ESP - test to make sure it is working, load needed functions
 success = dongle.setup()
 dongle.ask('\x03')
 
