@@ -34,8 +34,11 @@ for i in range(10):
 
 # You can also pull from a list:
 
-for i in[1,3,5,9]:
+for i in [1,3,5,9]:
      print (i)
+
+for index,i in enumerate([1,3,5,9]):
+     print (index,i)
 
 # or run until a condition is met:
 
