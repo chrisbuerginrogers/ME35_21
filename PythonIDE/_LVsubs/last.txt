@@ -1,1 +1,1 @@
-/Users/crogers/Documents/Python Codes/2023/scratch.py
+/Users/crogers/Documents/Python Codes/2023/MQTT/secrets.py

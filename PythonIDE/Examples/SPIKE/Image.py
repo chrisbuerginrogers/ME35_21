@@ -4,6 +4,7 @@ The Image clas is used to create images that can be displayed easily on the
 '''
 import hub, utime
 hub.display.show(hub.Image.HAPPY)
+hub.display.show('hi there')
 
 image = hub.Image("90009:"
                       "09090:"
