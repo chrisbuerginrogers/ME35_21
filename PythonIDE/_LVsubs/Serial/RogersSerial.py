@@ -40,6 +40,15 @@ def WriteSerial(string):
     except Exception as e:
         return 'ERR: ' + str(e)    
 
+def WriteBytes(data,replyLength):
+    try:
+        buffer=ser.read(ser.in_waiting)
+        reply = ser.write(bytes(data))
+        if (replyLength < 0): return []
+        return list(ser.read(replyLength))    # write bytes and get reply
+    except Exception as e:
+        return 'ERR: ' + str(e)    
+
 def ReadSerial():
     try:
         reply = ''
