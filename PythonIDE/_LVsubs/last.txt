@@ -1,1 +1,1 @@
-/Users/crogers/Documents/Python Codes/SPIKE_BLE/ble_sample.py
+/Users/crogers/GitHub/ME35_21/PythonIDE/Examples/SPIKE/SimpleUART.py

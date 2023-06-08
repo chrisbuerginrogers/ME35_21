@@ -1,4 +1,4 @@
-'''
+di'''
 The Image clas is used to create images that can be displayed easily on the 
      device’s LED matrix.
 '''
