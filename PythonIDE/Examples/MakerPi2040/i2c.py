@@ -7,6 +7,8 @@
 import machine
 
 i2c0 = machine.I2C(0, scl=machine.Pin(1), sda=machine.Pin(0), freq=100000)
+i2c0 = machine.I2C(0, scl=machine.Pin(5), sda=machine.Pin(4), freq=100000)
+i2c0.readfrom_mem(25,0x28,6)
 
 devices = i2c0.scan()
 if devices:
