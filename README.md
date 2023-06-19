@@ -2,6 +2,8 @@
 This has the LabVIEW (and example) code for Robotics class in 2021.
 To use this you will need to install Python3 of the same bitness as the LabVIEW install on your machine and a few libraries
   1. pip3 install pyserial
+  2. pip3 install paramiko (for SSH option)
+  3. Make sure you have just a vanilla python install (not anaconda, homebrew, etc)
   
 There are a few useful things in this code:
   1. LabVIEW code that can save and read files on SPIKE Prime
@@ -17,3 +19,4 @@ FAQ:
   2. I am on Big Sur and LabVIEW is not working - open the Terminal and copy paste each of these commands (and hit return each time) - you only have to do this once - but that will let LabVIEW work on your machine
        <br>- <em>defaults write com.ni.labview NSGraphicsContextAllowOverRestore -bool YES</em>
        <br>- <em>defaults write com.ni.labview NSViewAllowsRootLayerBacking 0</em>
+ 3. If you want to make your own UI - check out "MakeYourOwn" - you can have multiple processors on the same page.
