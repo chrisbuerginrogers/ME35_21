@@ -30,6 +30,7 @@
 			<Property Name="NI.DISK" Type="Bool">true</Property>
 		</Item>
 		<Item Name="ME35.vi" Type="VI" URL="../../ME35.vi"/>
+		<Item Name="BLETesting.vi" Type="VI" URL="../../BLETesting.vi"/>
 		<Item Name="MakeYourOwn.vi" Type="VI" URL="../../MakeYourOwn.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
