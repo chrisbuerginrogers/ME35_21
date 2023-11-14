@@ -1,9 +1,9 @@
-import util
+import runloop
 import motor
-import port
+from hub import port
 import display
 
-(p1,p2) = (port.PORTD,port.PORTF)
+p1,p2 = port.E,port.F
 
 async def motor_stack():
     degrees = 180

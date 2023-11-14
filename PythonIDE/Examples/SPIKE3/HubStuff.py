@@ -1,15 +1,18 @@
 import hub
 
-hub.config
+hub.battery_current()
+hub.battery_temperature()
+hub.battery_voltage()
 hub.device_uuid()
-hub.getHardwareID()
-hub.getBatteryTemperature()
-hub.getBatteryCurrent()
-hub.getBatteryVoltage()
-hub.getPortVoltage()
+hub.hardware_id()
+hub.temperature()  # 1 / 10 of a degree celsius (°C)
+hub.usb_charge_current()
+
+hub.config
 
 '''
-not working
-hub.getgetCurrSlotProgram()
-hub.startSlotProgram
+hub.soft_reset()   #Ctrl D
+hub.reset()   #disconnects USB
+hub.bootloader()
+hub.power_off()  #kills power
 '''

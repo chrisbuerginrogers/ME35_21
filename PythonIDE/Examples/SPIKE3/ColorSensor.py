@@ -1,7 +1,7 @@
 import color_sensor
-import port
+from hub import port
 
-light = port.PORTA
+light = port.D
 
 # Get color - see Defines.py for the list of colors
 colors = {
@@ -20,6 +20,6 @@ colors = {
     11:"LEGO_DIM_WHITE",
     }
 
-colors[color_sensor.get_color(light)]
-color_sensor.get_reflection(light)
-color_sensor.get_rgbi(light)  #RGBI
+colors[color_sensor.color(light)]
+color_sensor.reflection(light)
+color_sensor.rgbi(light)  #RGBI
