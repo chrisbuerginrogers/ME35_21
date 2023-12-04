@@ -74,7 +74,9 @@ print(GPA['Sunil'])
 GPA.pop('Sunil')
 GPA.update({'kim':4.0})
 for student in GPA.values(): #try replacing values with keys and items
-  print(student)
+    print(student)
+for key,value in GPA.items():
+    print(key,value)
 Grads = {'ed':3.2, 'jill': 3.4, 'martha': 2.9}
 students = {'ugrads':GPA, 'grads':Grads}
 print('Sally got a %f'%students['ugrads']['sally'])
