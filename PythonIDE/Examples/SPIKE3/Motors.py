@@ -25,45 +25,45 @@ motor.reset_relative_position(port.E)
 motor.relative_position(port.E)
 
 for i in range(10):
-     print(motor.absolute_position(port.E))
-     time.sleep(1)
+    print(motor.absolute_position(port.E))
+    time.sleep(1)
 
 #  --------- moving the motors
 pwm = 5000  # from -10,000 to 10,000
 motor.set_duty_cycle(port.E,pwm)
 time.sleep(1)
 motor.set_duty_cycle(port.E,0)
- 
+
 motor.run_for_degrees(port.E,20,100)
 
 motor.run_for_degrees(port.E, 
                 20,                   # degrees
                 100,                  # degrees/sec
                 stop = motor.BRAKE,   # see below
-                acceleration = 1000,  # (deg/sec²) (0 - 10000)
-                deceleration = 1000)  # (deg/sec²) (0 - 10000)
-   
+                acceleration = 1000,  # (deg/sec) (0 - 10000)
+                deceleration = 1000)  # (deg/sec) (0 - 10000)
+    
 motor.run_for_time(port.E, 
                 2000,                 # milliseconds
                 100,                  # degrees/sec
                 stop = motor.BRAKE,   # see below
-                acceleration = 1000,  # (deg/sec²) (0 - 10000)
-                deceleration = 1000)  # (deg/sec²) (0 - 10000)
+                acceleration = 1000,  # (deg/sec) (0 - 10000)
+                deceleration = 1000)  # (deg/sec) (0 - 10000)
 
 motor.run_to_absolute_position(port.E, 
                 20,                   # degrees (-180 to 180)
                 100,                  # degrees/sec
                 direction = motor.SHORTEST_PATH,   # motor.CLOCKWISE motor.COUNTERCLOCKWISE, motor.SHORTEST_PATH, motor.LONGEST_PATH
                 stop = motor.BRAKE,   # see below
-                acceleration = 1000,  # (deg/sec²) (0 - 10000)
-                deceleration = 1000)  # (deg/sec²) (0 - 10000)
+                acceleration = 1000,  # (deg/sec) (0 - 10000)
+                deceleration = 1000)  # (deg/sec) (0 - 10000)
     
 motor.run_to_relative_position(port.E, 
                 20,                   # degrees (-infinity to infinity)
                 100,                  # degrees/sec
                 stop = motor.BRAKE,   # see below
-                acceleration = 1000,  # (deg/sec²) (0 - 10000)
-                deceleration = 1000)  # (deg/sec²) (0 - 10000)
+                acceleration = 1000,  # (deg/sec) (0 - 10000)
+                deceleration = 1000)  # (deg/sec) (0 - 10000)
     
 
 '''
@@ -97,7 +97,7 @@ runloop.run(main())
 
 import motor_pair
 
-motor_pair.unpair(motor_pair.PAIR_1)   # remove any old pairing
+motor_pair.unpair(motor_pair.PAIR_1)   # remove any old pairing
 motor_pair.pair(motor_pair.PAIR_1, port.E, port.F)
 
 motor_pair.move(motor_pair.PAIR_1, 
@@ -144,4 +144,3 @@ async def main():
     print('done')
     
 runloop.run(main())
-             

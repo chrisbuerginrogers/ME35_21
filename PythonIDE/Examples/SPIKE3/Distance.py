@@ -23,5 +23,3 @@ ds.set_pixel(p1,row,col,80)
 for b in range(100):
     ds.show(p1, [b]*4)
     time.sleep(0.1)
-
-

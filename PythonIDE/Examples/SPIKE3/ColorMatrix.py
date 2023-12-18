@@ -30,4 +30,3 @@ for color in range(len(colors)-1):
     row = int(color/3) if color < 9 else int((color-9)/3)
     color_matrix.set_pixel(p1, col, row, (color, brightness))
     time.sleep(0.1)
-

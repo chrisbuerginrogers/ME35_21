@@ -13,7 +13,7 @@ btn = {
     1:'left',
     2:'right',
     3:'connect',
-   }
+    }
 
 while True:
     for press in btn:
