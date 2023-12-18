@@ -90,12 +90,10 @@ for i,image in enumerate(images):
     
 orientation={'up': 0, 'left': 1, 'down':2, 'right': 3}
     
-for o in orientation:
+for o in orientation:
     print(orientation[o])
     light_matrix.set_orientation(orientation[o])
     time.sleep(1)
 
 if not (light_matrix.get_orientation() == orientation['up']): 
     light_matrix.set_orientation(orientation['up'])
-    
-         
